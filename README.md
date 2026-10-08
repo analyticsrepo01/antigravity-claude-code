@@ -133,6 +133,34 @@ Gets an architectural second opinion from Gemini 3.8 Pro/Flash without modifying
 
 ---
 
+## 🎯 Example Use Cases
+
+### 1. Autonomous Coding Sprints with Dual-Model Synergy
+A developer working in Claude Code delegates heavy, multi-file refactoring and automated test execution to Google Antigravity powered by Gemini 3.8 Flash (BYOK).
+```text
+/antigravity "Refactor our authentication middleware to support asynchronous JWT rotation with Redis caching, and run the test suite to verify zero regressions."
+```
+
+### 2. Independent Cross-Model Code & Security Review
+Before opening a Pull Request, the developer uses Antigravity to conduct a second-opinion audit on pending git diffs, checking for OWASP vulnerabilities, logic edge cases, and performance regressions.
+```text
+/antigravity-review "Perform a strict security and concurrency audit on the active git changes."
+```
+
+### 3. High-Reasoning Architectural Consultation
+The developer queries Gemini 3.8 Pro/Flash for design tradeoffs, algorithmic complexity analysis, and database schema recommendations without touching any local files.
+```text
+/antigravity-consult "What are the latency, memory, and scalability tradeoffs between using RocksDB vs SQLite for our local caching layer?"
+```
+
+### 4. Cost-Effective Test & Fixture Generation
+Developers utilize their personal Google AI Studio API key (BYOK) to generate extensive unit test suites and mock fixtures at near-zero cost, offloading repetitive token-heavy tasks while Claude manages high-level architecture.
+```text
+/antigravity "Generate complete pytest coverage for src/models.py including edge cases for null inputs and serialization failures."
+```
+
+---
+
 ## 🛠️ MCP Tools Reference
 
 Claude Code can also invoke the underlying MCP tools directly during conversation:
