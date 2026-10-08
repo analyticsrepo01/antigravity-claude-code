@@ -45,3 +45,9 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+
+# Private Notes & Local Notebooks
+do no publish/
+do not publish/
+.ipynb_checkpoints/
+
