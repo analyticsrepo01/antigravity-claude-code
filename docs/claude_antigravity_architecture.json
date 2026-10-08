@@ -33,7 +33,7 @@
       "id": "claude",
       "type": "backend",
       "label": "Claude Code CLI",
-      "sublabel": "Claude 3.7 Sonnet / Opus",
+      "sublabel": "Claude Opus 5.5",
       "pos": [250, 250],
       "size": [150, 68]
     },

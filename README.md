@@ -16,7 +16,7 @@ Claude Code is exceptional at conversational codebase interaction and targeted m
 
 | Capability | Claude Code Default | With Antigravity Plugin |
 | :--- | :--- | :--- |
-| **Model Collaboration** | Single Anthropic model | **Dual-model consensus** (Claude 3.7 Sonnet + Gemini 3.8 Flash/Pro) |
+| **Model Collaboration** | Single Anthropic model | **Dual-model consensus** (Claude Opus 5.5 + Gemini 3.8 Flash/Pro) |
 | **Autonomous Turn Execution** | Turn-by-turn interactive prompts | **Deep autonomous software engineering runs** (`agy --effort high`) |
 | **Architectural Second Opinions** | Single perspective | Independent review & architectural critiques via `/antigravity-consult` |
 | **Automated Diff Audits** | Manual review | Multi-agent security & OWASP audit on active diffs via `/antigravity-review` |
@@ -33,7 +33,7 @@ For an interactive, explorable SVG diagram with route tracing and theme toggles,
  ┌─────────────────────────────────────────────────────────────┐
  │                         Claude Code                         │
  │                                                             │
- │  Developer Prompt ──► Claude 3.7 Sonnet ──► Slash Commands  │
+ │  Developer Prompt ──► Claude Opus 5.5 ──► Slash Commands    │
  │                              │              (/antigravity)  │
  └──────────────────────────────┼──────────────────────────────┘
                                 │ Local Stdio (JSON-RPC)
