@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-plugin.json",
+  "name": "antigravity",
+  "version": "0.1.0",
+  "description": "Autonomous software engineering, architectural consultation, and code review powered by Google Antigravity (agy) and Gemini BYOK.",
+  "author": {
+    "name": "analyticsrepo01"
+  },
+  "homepage": "https://github.com/analyticsrepo01/antigravity-claude-code",
+  "repository": "https://github.com/analyticsrepo01/antigravity-claude-code",
+  "license": "Apache-2.0",
+  "keywords": [
+    "antigravity",
+    "gemini",
+    "byok",
+    "mcp",
+    "autonomous-agent",
+    "code-review",
+    "dual-model"
+  ],
+  "mcpServers": {
+    "antigravity": {
+      "command": "python3",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/antigravity_mcp.py"],
+      "env": {
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      }
+    }
+  }
+}

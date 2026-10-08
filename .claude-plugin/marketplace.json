@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-marketplace.json",
+  "name": "antigravity-marketplace",
+  "description": "Google Antigravity & Gemini BYOK extensions for Claude Code",
+  "owner": {
+    "name": "analyticsrepo01",
+    "url": "https://github.com/analyticsrepo01"
+  },
+  "plugins": [
+    {
+      "name": "antigravity",
+      "description": "Autonomous software engineering, architectural consultation, and code review powered by Google Antigravity (agy) and Gemini BYOK.",
+      "version": "0.1.0",
+      "source": "./",
+      "keywords": [
+        "antigravity",
+        "gemini",
+        "byok",
+        "mcp",
+        "autonomous-agent",
+        "code-review",
+        "dual-model"
+      ]
+    }
+  ]
+}

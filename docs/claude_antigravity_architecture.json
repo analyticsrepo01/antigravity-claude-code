@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Antigravity for Claude Code Architecture",
+    "quality_profile": "showcase",
+    "viewBox": [1160, 660],
+    "views": [
+      {
+        "id": "execution-flow",
+        "label": "Autonomous Task Execution",
+        "focus": ["claude", "mcp_tools", "agy", "gemini", "workspace"],
+        "note": "Claude Code delegates coding assignments to Antigravity via local FastMCP stdio."
+      },
+      {
+        "id": "review-flow",
+        "label": "Peer Review & Consultation",
+        "focus": ["claude", "commands", "mcp_tools", "gemini"],
+        "note": "Developer invokes slash commands for second opinions and diff reviews powered by Gemini BYOK."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "developer",
+      "type": "external",
+      "label": "Software Engineer",
+      "sublabel": "Terminal / Interactive CLI",
+      "pos": [36, 250],
+      "size": [140, 68]
+    },
+    {
+      "id": "claude",
+      "type": "backend",
+      "label": "Claude Code CLI",
+      "sublabel": "Claude 3.7 Sonnet / Opus",
+      "pos": [250, 250],
+      "size": [150, 68]
+    },
+    {
+      "id": "commands",
+      "type": "backend",
+      "label": "Slash Commands",
+      "sublabel": "/antigravity [-review|-consult]",
+      "pos": [250, 410],
+      "size": [150, 68]
+    },
+    {
+      "id": "mcp_tools",
+      "type": "backend",
+      "label": "FastMCP Stdio Server",
+      "sublabel": "servers/antigravity_mcp.py",
+      "pos": [480, 250],
+      "size": [160, 68]
+    },
+    {
+      "id": "agy",
+      "type": "backend",
+      "label": "Google Antigravity",
+      "sublabel": "agy Autonomous Engine",
+      "pos": [720, 250],
+      "size": [160, 68]
+    },
+    {
+      "id": "workspace",
+      "type": "backend",
+      "label": "Local Workspace",
+      "sublabel": "Codebase & Git Tree",
+      "pos": [720, 410],
+      "size": [160, 68]
+    },
+    {
+      "id": "gemini",
+      "type": "external",
+      "label": "Google AI Studio",
+      "sublabel": "Gemini 3.8 / 3.7 BYOK",
+      "pos": [960, 250],
+      "size": [150, 68]
+    }
+  ],
+  "boundaries": [
+    {
+      "label": "Claude Code Environment",
+      "kind": "region",
+      "wraps": ["claude", "commands"]
+    },
+    {
+      "label": "Antigravity Plugin Subsystem",
+      "kind": "region",
+      "wraps": ["mcp_tools", "agy", "workspace"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "c1",
+      "from": "developer",
+      "to": "claude",
+      "label": "user prompt"
+    },
+    {
+      "id": "c2",
+      "from": "commands",
+      "to": "claude",
+      "label": "dispatch command",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "labelAt": [325, 345]
+    },
+    {
+      "id": "c3",
+      "from": "claude",
+      "to": "mcp_tools",
+      "label": "MCP JSON-RPC"
+    },
+    {
+      "id": "c4",
+      "from": "mcp_tools",
+      "to": "agy",
+      "label": "subprocess exec"
+    },
+    {
+      "id": "c5",
+      "from": "agy",
+      "to": "workspace",
+      "label": "file diffs & tests",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [800, 345]
+    },
+    {
+      "id": "c6",
+      "from": "agy",
+      "to": "gemini",
+      "label": "Gemini BYOK API"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Local FastMCP Stdio",
+      "items": [
+        "Zero HTTP tunnels or exposed open ports required",
+        "Sub-millisecond IPC communication with Claude Code"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Gemini BYOK",
+      "items": [
+        "Use your own Google AI Studio key at near-zero cost",
+        "Ephemeral key memory injection with regex auto-redaction"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Dual-Model Collaboration",
+      "items": [
+        "Claude Code orchestrates high-level planning & review",
+        "Antigravity executes deep multi-file refactors & tests"
+      ]
+    }
+  ]
+}

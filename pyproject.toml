@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "antigravity-claude"
+version = "0.1.0"
+description = "Antigravity plugin for Claude Code with Gemini BYOK"
+readme = "README.md"
+authors = [{ name = "analyticsrepo01" }]
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+antigravity-mcp = "servers.antigravity_mcp:mcp.run"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
